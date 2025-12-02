@@ -15,6 +15,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "WineOpSys",
   description: "The digital command center for wineries",
+  icons: {
+    icon: [
+      { url: '/favicon.svg', media: '(prefers-color-scheme: light)' },
+      { url: '/favicon.svg', media: '(prefers-color-scheme: dark)' },
+    ],
+  },
 };
 
 export default function RootLayout({

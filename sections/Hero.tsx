@@ -19,7 +19,7 @@ export default function Hero() {
       <div className="mx-auto px-5 max-w-[1028px] mb-[150px]">
         <div className="grid md:grid-cols-2 items-center gap-10">
           {/* object-left */}
-            <div className="absolute w-full max-w-[500px] sm:max-w-[857px] top-0 xl:top-[-232px] ml-5 xl:ml-[-731px] z-0">
+            <div className="absolute w-full max-w-[500px] sm:max-w-[857px] top-0 xl:top-[-232px] ml-5 xl:ml-[-700px] z-0">
               <Image
                 src="/object-left.svg"
                 alt="object-left"
@@ -32,12 +32,12 @@ export default function Hero() {
           
           {/* TEXT */}
           <div className="">
-            <h1 className="relative mt-[150px] text-3xl font-medium leading-[54px] tracking-tight sm:text-4xl md:text-[50px] z-10">
+            <h1 className="relative mt-[150px] text-3xl font-medium leading-[54px] tracking-tight sm:text-4xl md:text-[50px] lg:w-[526px] z-10">
               The Digital Command Center for Wineries.
             </h1>
 
             {/* object-top */}
-            <div className="hidden xl:flex absolute w-full max-w-[421px] top-[-302px] ml-[350px] ">
+            <div className="hidden xl:flex absolute w-full max-w-[421px] top-[-302px] ml-[370px] ">
               <Image
                 src="/object-top.svg"
                 alt="object-top"
@@ -48,14 +48,26 @@ export default function Hero() {
               />
             </div>
 
+            {/* object-right */}
+            <div className="hidden xl:flex absolute w-full max-w-[700px] top-[-118px] ml-[655px] ">
+              <Image
+                src="/vineyard-full-hero.png"
+                alt="object-right"
+                width={900}
+                height={1200}
+                className="w-full h-auto rounded-[60px]"
+                priority
+              />
+            </div>
+
             <p className="relative max-w-xl text-sm mt-[41px] leading-[24px] text-[#66244E] md:text-[20px] z-10">
-              From grape to bottle, one system that orchestrates production, traceability, and real-time decisions.
+              From grape to bottle, one system that orchestrates production, orders, traceability, and real-time decisions.
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 mt-[63px] relative z-10">
+            <div className="flex flex-wrap items-center gap-[35px] mt-[63px] relative z-10">
               <Button
                 size="lg"
-                className="rounded-full bg-[#66243E] px-7 text-sm font-semibold text-white hover:bg-[#66243E"
+                className="rounded-full bg-[#66243E] px-7 text-sm font-medium text-white hover:bg-[#66243E"
                 onClick={() => scrollToSection("contact")}
               >
                 Request a Demo
@@ -77,7 +89,7 @@ export default function Hero() {
       </div>
 
       {/* Image right */}
-      <div className="hidden xl:flex absolute w-full max-w-[700px] top-[-142px] right-[-137px] z-10">
+      {/* <div className="hidden xl:flex absolute w-full max-w-[700px] top-[-27px] right-[-7px] z-10">
         <Image
           src="/vineyard-hero.png"
           alt="Wine vineyard at sunset" 
@@ -86,7 +98,7 @@ export default function Hero() {
           className="w-full h-auto rounded-[60px]"
           priority
         />
-      </div>
+      </div> */}
 
     </section>
 

@@ -1,82 +1,107 @@
-import React from 'react';
-import { Card, CardTitle, CardHeader, CardContent } from "@/components/ui/card";
-import { Linkedin } from "lucide-react";
+import React from "react";
+import Image from "next/image";
 
 const team = [
   {
     name: "Tudor Cotruta",
     role: "Co-founder, CEO",
-    bio: "Entrepreneur with 15+ years of experience and deep involvement in the Moldovan wine ecosystem.",
-    linkedin: "https://www.linkedin.com/",
+    bio: "Entrepreneur with over 15 years of experience and deep involvement in the Moldovan wine ecosystem. Responsible for vision, stakeholder relationships, and business development for WineOpSys.",
+    image: "/team/person1.png",
   },
   {
     name: "Alexandr Avanesean",
     role: "Co-founder, Marketing & Operations",
-    bio: "Second-generation wine family background with experience in business development and FMCG brand management.",
-    linkedin: "https://www.linkedin.com/",
+    bio: "Second-generation wine family background and experience as business developer in a leading spirits producer and brand manager for a multi-country FMCG portfolio. Leads marketing, operations, and partner coordination.",
+    image: "/team/person2.png",
   },
   {
     name: "Sorin Canter",
     role: "Co-founder, CPTO",
-    bio: "Over 20 years in commercial software delivery in technical and leadership roles.",
-    linkedin: "https://www.linkedin.com/",
+    bio: "Over 20 years in commercial software delivery in technical and leadership roles. Responsible for product architecture, delivery, and integration of WineOpSys into real winery environments.",
+    image: "/team/person3.png",
   },
 ];
 
 const Team: React.FC = () => {
   return (
-    <section id="team" className="mx-auto px-5 max-w-[1028px] mt-[100px]">
-      <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+    <section id="team" className="relative mx-auto mt-[100px] max-w-[1028px] px-5">
+      <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between z-10 relative">
         <div>
           <h2 className="text-2xl font-medium tracking-tight md:text-[35px] md:leading-[54px]">
             Team
           </h2>
-          
-         
         </div>
       </div>
 
-      <span className="w-full h-0.5 bg-[#66243E] flex mt-[17px]"></span>
+      <span className="mt-[17px] block h-[2px] w-full bg-[#66243E]" />
 
-      <div className="grid gap-4 md:grid-cols-3 mt-[70px]">
+      {/* object-left */}
+      <div className="hidden xl:flex absolute w-full max-w-[500px] sm:max-w-[715px] top-0 xl:top-[304px] ml-5 xl:ml-[-658px] z-0">
+        <Image
+          src="/object-left.svg"
+          alt="object-left"
+          width={715}
+          height={715}
+          className="w-full h-auto rounded-[60px]"
+          priority
+        />
+      </div>
+
+      {/* object-right */}
+      <div className="hidden xl:flex absolute w-full max-w-[300px] sm:max-w-[500px] top-0 xl:top-[164px] ml-5 xl:ml-[869px] z-0">
+        <Image
+          src="/object-left.svg"
+          alt="object-left"
+          width={715}
+          height={715}
+          className="w-full h-auto rounded-[60px]"
+          priority
+        />
+      </div>
+
+      <div className="mt-[70px] space-y-16 flex flex-col items-center">
         {team.map((member) => (
-          <Card
+          <div
             key={member.name}
-            className="flex h-full flex-col border-slate-200 bg-white"
+            className="flex flex-col items-center gap-6 lg:gap-[42px] md:flex-row lg:max-w-[655px]"
           >
-            <CardHeader className="pb-3">
-              <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-50 text-sm font-semibold text-slate-900 ring-1 ring-slate-200">
-                  {member.name
-                    .split(" ")
-                    .map((n) => n[0])
-                    .join("")}
-                </div>
-                <div>
-                  <CardTitle className="text-sm font-semibold text-slate-900">
-                    {member.name}
-                  </CardTitle>
-                  <p className="text-xs text-emerald-700">{member.role}</p>
-                </div>
+            {/* Portrait */}
+            <div className="shrink-0">
+              <div className="relative h-[197px] w-[197px] overflow-hidden rounded-[40px]">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="h-full w-full object-cover"
+                />
               </div>
-            </CardHeader>
-            <CardContent className="flex flex-1 flex-col justify-between pt-0 text-xs leading-relaxed text-slate-600">
-              <p>{member.bio}</p>
-              <a
-                href={member.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-4 inline-flex items-center gap-2 text-xs font-medium text-emerald-700 hover:text-emerald-600"
-              >
-                <Linkedin className="h-3.5 w-3.5" />
-                <span>View on LinkedIn</span>
-              </a>
-            </CardContent>
-          </Card>
+            </div>
+
+            {/* Divider + Text */}
+            <div className="flex w-full h-full items-stretch gap-6 md:gap-[42px]">
+              <span className="hidden h-[190px] w-[1px] bg-[#CBA2A6] md:block" />
+              <div className="text-left">
+                <p className="text-[24px] font-medium leading-8 text-[#66243E]">
+                  <span className="block">{member.name.split(" ")[0]}</span>
+                  <span className="block">
+                    {member.name.split(" ").slice(1).join(" ")}
+                  </span>
+                </p>
+
+                <p className="mt-1 text-sm font-medium text-[#CBA2A6]">
+                  {member.role}
+                </p>
+                <p className="mt-4 max-w-xl text-sm leading-relaxed text-[#4B4B4B]">
+                  {member.bio}
+                </p>
+
+               
+              </div>
+            </div>
+          </div>
         ))}
       </div>
     </section>
-  )
+  );
 };
 
 export default Team;
