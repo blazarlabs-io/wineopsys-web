@@ -14,12 +14,12 @@ function scrollToSection(id: string) {
 
 export default function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden flex ">
+    <section id="home" className="relative flex pt-20">
       {/* CONTAINER TEXT */}
       <div className="mx-auto px-5 max-w-[1028px] mb-[150px]">
         <div className="grid md:grid-cols-2 items-center gap-10">
           {/* object-left */}
-            <div className="absolute w-full max-w-[500px] sm:max-w-[857px] top-0 xl:top-[-232px] ml-5 xl:ml-[-700px] z-0">
+            <div className="absolute w-full max-w-[857px] top-[-172px] ml-[-700px] z-0">
               <Image
                 src="/object-left.svg"
                 alt="object-left"
@@ -37,7 +37,7 @@ export default function Hero() {
             </h1>
 
             {/* object-top */}
-            <div className="hidden xl:flex absolute w-full max-w-[421px] top-[-302px] ml-[370px] ">
+            <div className=" absolute w-full max-w-[421px] top-[-202px] ml-[330px] ">
               <Image
                 src="/object-top.svg"
                 alt="object-top"
@@ -49,10 +49,22 @@ export default function Hero() {
             </div>
 
             {/* object-right */}
-            <div className="hidden xl:flex absolute w-full max-w-[700px] top-[-118px] ml-[655px] ">
+            <div className=" absolute w-full max-w-[700px] top-[-58px] ml-[655px] ">
               <Image
                 src="/vineyard-full-hero.png"
                 alt="object-right"
+                width={900}
+                height={1200}
+                className="w-full h-auto rounded-[60px]"
+                priority
+              />
+            </div>
+
+            {/* object-bottom */}
+            <div className=" absolute w-full max-w-[521px] top-[380px] ml-[290px] ">
+              <Image
+                src="shapes/object-gray-romb.svg"
+                alt="object-top"
                 width={900}
                 height={1200}
                 className="w-full h-auto rounded-[60px]"
@@ -67,7 +79,7 @@ export default function Hero() {
             <div className="flex flex-wrap items-center gap-[35px] mt-[63px] relative z-10">
               <Button
                 size="lg"
-                className="rounded-full bg-[#66243E] px-7 text-sm font-medium text-white hover:bg-[#66243E"
+                className="rounded-full bg-[#66243E] px-7 text-sm font-medium text-white hover:bg-[#66243E] cursor-pointer"
                 onClick={() => scrollToSection("contact")}
               >
                 Request a Demo
@@ -75,7 +87,7 @@ export default function Hero() {
 
               <button
                 onClick={() => scrollToSection("features")}
-                className="text-sm font-medium text-[#66244e] underline-offset-4 hover:underline"
+                className="text-[20px] font-medium text-[#66244e] underline-offset-4 hover:underline cursor-pointer"
               >
                 Download overview / PDF
               </button>
@@ -83,22 +95,9 @@ export default function Hero() {
 
           </div>
 
-          {/* SPACER GRID */}
           <div />
         </div>
       </div>
-
-      {/* Image right */}
-      {/* <div className="hidden xl:flex absolute w-full max-w-[700px] top-[-27px] right-[-7px] z-10">
-        <Image
-          src="/vineyard-hero.png"
-          alt="Wine vineyard at sunset" 
-          width={900}
-          height={1200}
-          className="w-full h-auto rounded-[60px]"
-          priority
-        />
-      </div> */}
 
     </section>
 

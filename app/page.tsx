@@ -17,7 +17,7 @@ export default function Home() {
       <Features />
       <div className='relative'>
         {/* object-left */}
-        <div className="pointer-events-none absolute right-[-120px] top-[-180px] w-[500px] sm:w-[857px] z-0">
+        {/* <div className="pointer-events-none absolute right-[-120px] top-[-180px] w-[500px] sm:w-[857px] z-0">
           <Image
             src="/object-left.svg"
             alt="object-left"
@@ -26,7 +26,7 @@ export default function Home() {
             className="w-full h-auto rounded-[60px]"  
             priority
           />
-        </div>
+        </div> */}
         <HowItWork />
       </div>
       
