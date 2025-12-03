@@ -30,7 +30,7 @@ export default function NavigationBar() {
   };
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/80 backdrop-blur">
+    <header className="fixed top-0 left-0 right-0 z-40 border-b border-slate-200 bg-white">
       <div className="mx-auto max-w-[1028px] flex items-center justify-between px-4 py-4">
         <div
           className="flex cursor-pointer items-center gap-2"
@@ -54,7 +54,7 @@ export default function NavigationBar() {
           ))}
           <Button
             size="sm"
-            className="rounded-full bg-[#66244e] px-4 text-xs ml-[20px] font-semibold text-white hover:bg-[#66243e]"
+            className="rounded-full bg-[#66244e] px-4 text-[14px] ml-5 font-medium text-white hover:bg-[#66243e] cursor-pointer"
             onClick={() => handleNavClick("contact")}
           >
             Request a demo
@@ -104,7 +104,7 @@ export default function NavigationBar() {
             ))}
             <Button
               size="sm"
-              className="mt-2 w-full rounded-full bg-[#66244e] text-xs font-semibold text-white hover:bg-[#66243e]"
+              className="mt-2 w-full rounded-full bg-[#66244e] text-[14px] font-medium text-white hover:bg-[#66243e] cursor-pointer"
               onClick={() => handleNavClick("contact")}
             >
               Request a demo

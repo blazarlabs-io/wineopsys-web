@@ -70,59 +70,85 @@ const HowItWork: FC = () => {
   return (
     <section
       id="how-it-works"
-      className="mx-auto mt-[100px] max-w-[1028px] px-5 z-20 relative"
+      className="mx-auto mt-[100px] max-w-[1028px] px-5 z-20"
     >
-      <div className="w-full space-y-3">
-        <h2 className="text-2xl font-medium tracking-tight md:text-[35px] md:leading-[54px]">
+      <div className="w-full space-y-3 relative">
+        <h2 className="text-2xl font-medium tracking-tight md:text-[35px] md:leading-[54px] z-10 relative">
           How It Works – from grape to bottle
         </h2>
-        <span className="mt-[17px] flex h-0.5 w-full bg-[#66243E]" />
-        <p className="max-w-[500px] text-sm text-[#66243E] lg:text-[20px] lg:leading-[24px]">
+        <span className="mt-[17px] flex h-0.5 w-full bg-[#66243E] relative z-10" />
+        <p className="max-w-[500px] text-sm text-[#66243E] lg:text-[20px] lg:leading-6 relative z-10">
           WineOpSys turns the winery production flow into modular, connected
           blocks that can be activated step by step.
         </p>
+         <div className="pointer-events-none absolute right-[-409px] top-[-180px] w-[500px] sm:w-[715px] z-0">
+          <Image
+            src="/object-left.svg"
+            alt="object-left"
+            width={900}
+            height={1200}
+            className="w-full h-auto rounded-[60px]"  
+            priority
+          />
+        </div>
       </div>
 
       {/* Module cards */}
-      <div className="mt-[30px] grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-[50px] grid gap-x-[126px] gap-y-[55px] md:grid-cols-2 lg:grid-cols-3 relative z-10">
         {moduleGroups.map((group) => (
           <Card
             key={group.title}
-            className="flex h-full flex-col rounded-[22px] border border-[#E8C7D3] bg-white shadow-[0_10px_30px_rgba(102,36,62,0.12)]"
+            className="relative flex items-center rounded-[22px] border border-[#E8C7D3] bg-[#FFF9FB] px-8 pr-[54px] pt-4 shadow-[0_10px_30px_rgba(102,36,62,0.12)]"
           >
-            <CardHeader className="flex flex-col items-center gap-4 pb-0 pt-6">
-              {/* Icon in rounded square */}
-              <div className="flex h-[90px] w-[90px] items-center justify-center rounded-2xl bg-[#C27A8F]">
-                <Image
-                  src={group.icon}
-                  alt={group.title}
-                  width={32}
-                  height={32}
-                  className="object-contain"
-                />
-              </div>
-              <CardTitle className="text-center text-lg font-semibold text-[#66243E]">
-                {group.title}
-              </CardTitle>
-            </CardHeader>
+            {/* Icon overlapped on the left */}
+            <div className="absolute left-[-45px] top-1/2 flex h-[90px] w-[90px] -translate-y-1/2 items-center justify-center rounded-2xl bg-[#C27A8F]">
+              <Image
+                src={group.icon}
+                alt={group.title}
+                width={32}
+                height={32}
+                className="object-contain"
+              />
+            </div>
 
-            <CardContent className="flex flex-1 flex-col justify-between px-6 pb-6 pt-4">
-              <p className="text-sm leading-relaxed text-[#66243E]">
-                {group.description}
-              </p>
+            {/* Content inside card */}
+            <div className="ml-[70px] flex flex-col w-full items-start justify-between gap-6">
+              <div>
+                <CardTitle className="text-[22px] font-medium text-[#66243E] leading-[26px]">
+                  {group.title}
+                </CardTitle>
 
-              <div className="mt-6 flex justify-center">
-                <Button
-                  variant="outline"
-                  className="h-auto rounded-full border-[#C27A8F] bg-white px-6 py-1 text-sm font-medium text-[#66243E] hover:bg-[#FDEFF4]"
-                >
-                  Details
-                </Button>
+                <p className="mt-1 text-[14px] leading-4 text-[#66243E]">
+                  {group.description}
+                </p>
               </div>
-            </CardContent>
+
+              <Button
+                variant="outline"
+                className="self-end rounded-full border-[#C27A8F] bg-transparent px-6 py-1 text-sm font-medium text-[#66243E] hover:bg-[#FDEFF4] cursor-pointer"
+              >
+                Details
+              </Button>
+            </div>
           </Card>
         ))}
+
       </div>
+
+      <div className="relative">
+        {/* Shape Bottom Gray */}
+        <div className="pointer-events-none absolute right-[209px] top-[-320px] w-[457px] z-0">
+          <Image
+            src="/shapes/object-gray-romb.svg"
+            alt="object-bottom-gray"
+            width={900}
+            height={1200}
+            className="w-full h-auto rounded-[60px]"  
+            priority
+          />
+        </div>
+      </div>
+
     </section>
   );
 };

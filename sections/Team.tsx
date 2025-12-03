@@ -38,7 +38,7 @@ const Team: React.FC = () => {
       {/* object-left */}
       <div className="hidden xl:flex absolute w-full max-w-[500px] sm:max-w-[715px] top-0 xl:top-[304px] ml-5 xl:ml-[-658px] z-0">
         <Image
-          src="/object-left.svg"
+          src="shapes/object-gray-romb.svg"
           alt="object-left"
           width={715}
           height={715}
@@ -90,7 +90,7 @@ const Team: React.FC = () => {
                 <p className="mt-1 text-sm font-medium text-[#CBA2A6]">
                   {member.role}
                 </p>
-                <p className="mt-4 max-w-xl text-sm leading-relaxed text-[#4B4B4B]">
+                <p className="mt-4 max-w-xl text-sm leading-relaxed text-[#66243E]">
                   {member.bio}
                 </p>
 

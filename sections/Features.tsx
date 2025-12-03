@@ -40,13 +40,13 @@ const Features: React.FC = () => {
     <section id="features" className=" mx-auto px-5 max-w-[1028px]">
       <div className="flex flex-col md:flex-row md:items-end md:justify-between">
         <div>
-          <h2 className="text-[35px] font-medium leading-[54px]">
+          <h2 className="text-[35px] font-medium leading-[54px] relative z-10">
             Key Features
           </h2>
         </div>
       </div>
 
-      <span className="w-full h-0.5 bg-[#66243E] flex mt-[17px]"></span>
+      <span className="w-full h-0.5 bg-[#66243E] flex mt-[17px] relative z-10"></span>
 
       <div className="grid gap-4 md:grid-cols-3 mt-[37px]">
         {featureTiles.map((feature) => (
