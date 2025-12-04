@@ -1,6 +1,13 @@
+'use client'
+
 import React from "react";
 import { Card, CardTitle, CardHeader, CardContent } from "@/components/ui/card";
+import { heroContainer } from "@/lib/motion/heroVariants";
+import { cardVariants } from "@/lib/motion/common";
+import { motion } from "framer-motion";
 import Image from "next/image";
+import ImageGlass from "@/components/ImageGlass";
+import ImageWinemaker from "@/components/ImageWinemaker";
 
 const personas1 = [
   {
@@ -38,10 +45,18 @@ const personas2 = [
   },
 ];
 
+const MotionCard = motion(Card);
+
 const WhoUsesWineopsys: React.FC = () => {
   return (
     <section id="who-uses" className="mx-auto px-5 max-w-[1028px] mt-[100px]">
-      <div className="w-full space-y-3">
+      <motion.div 
+        className="w-full space-y-3"
+        variants={heroContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.4 }}
+      >
         <h2 className="text-2xl font-medium tracking-tight md:text-[35px] md:leading-[54px]">
           Who Uses WineOpSys
         </h2>
@@ -49,34 +64,22 @@ const WhoUsesWineopsys: React.FC = () => {
         <p className="text-sm lg:text-[20px] lg:leading-6 text-[#66243E] max-w-[550px] mt-[27px]">
           WineOpSys mirrors the real production flow of a winery and digitises it in modular blocks. Each module can be activated when the winery is ready, while data stays connected across the full process.
         </p>
-      </div>
+      </motion.div>
       <div className="grid gap-[38px]  mt-[70px] lg:max-w-[320px] relative">
         {/* Image Glass Center */}
-        <div className="pointer-events-none absolute right-[-329px] top-[250px] w-[297px] z-0">
-          <Image
-            src="/glass.png"
-            alt="object-glass"
-            width={900}
-            height={1200}
-            className="w-full h-auto rounded-[60px]"  
-            priority
-          />
-        </div>
+        <ImageGlass />
 
         {/* Image Winemaker Right */}
-        <div className="pointer-events-none absolute right-[-1009px] top-[-200px] w-[735px] z-0">
-          <Image
-            src="/winemaker.png"
-            alt="winemaker"
-            width={900}
-            height={1200}
-            className="w-full h-auto rounded-[60px]"  
-            priority
-          />
-        </div>
-        {personas1.map((persona) => (
-          <Card
+        <ImageWinemaker />
+        
+        {personas1.map((persona, index) => (
+          <MotionCard
             key={persona.role}
+            custom={index} 
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.25 }}
             className="h-full border-0 bg-white shadow-none"
           >
             <div className="flex relative">
@@ -104,13 +107,18 @@ const WhoUsesWineopsys: React.FC = () => {
             <CardContent className="pt-0 text-[14px] leading-4 text-[#66243E] z-10 relative">
               {persona.gain}
             </CardContent>
-          </Card>
+          </MotionCard>
         ))}
       </div>
       <div className="grid gap-6 grid-cols-1 lg:grid-cols-3 mt-21">
-        {personas2.map((persona) => (
-          <Card
+        {personas2.map((persona, index) => (
+          <MotionCard
             key={persona.role}
+            custom={index} 
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.25 }}
             className="h-full border-0 bg-white shadow-none"
           >
             <div className="flex relative">
@@ -138,7 +146,7 @@ const WhoUsesWineopsys: React.FC = () => {
             <CardContent className="pt-0 text-[14px] leading-4 text-[#66243E] z-10 relative">
               {persona.gain}
             </CardContent>
-          </Card>
+          </MotionCard>
         ))}
       </div>
     </section>

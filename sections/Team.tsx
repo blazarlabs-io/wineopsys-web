@@ -1,5 +1,11 @@
+'use client'
+
 import React from "react";
-import Image from "next/image";
+import { heroContainer } from "@/lib/motion/heroVariants";
+import { cardVariants } from "@/lib/motion/common";
+import { motion } from "framer-motion";
+import TeamShapeLeft from "@/components/TeamShapeLeft";
+import TeamShapeRight from "@/components/TeamShapeRight";
 
 const team = [
   {
@@ -27,43 +33,42 @@ const Team: React.FC = () => {
     <section id="team" className="relative mx-auto mt-[100px] max-w-[1028px] px-5">
       <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between z-10 relative">
         <div>
-          <h2 className="text-2xl font-medium tracking-tight md:text-[35px] md:leading-[54px]">
+          <motion.h2 
+            className="text-2xl font-medium tracking-tight md:text-[35px] md:leading-[54px]"
+            variants={heroContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.4 }}
+          >
             Team
-          </h2>
+          </motion.h2>
         </div>
       </div>
 
-      <span className="mt-[17px] block h-[2px] w-full bg-[#66243E]" />
+      <motion.span 
+        className="mt-[17px] block h-0.5 w-full bg-[#66243E]" 
+        variants={heroContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.4 }}
+      />
 
       {/* object-left */}
-      <div className="hidden xl:flex absolute w-full max-w-[500px] sm:max-w-[715px] top-0 xl:top-[304px] ml-5 xl:ml-[-658px] z-0">
-        <Image
-          src="shapes/object-gray-romb.svg"
-          alt="object-left"
-          width={715}
-          height={715}
-          className="w-full h-auto rounded-[60px]"
-          priority
-        />
-      </div>
+      <TeamShapeLeft />
 
       {/* object-right */}
-      <div className="hidden xl:flex absolute w-full max-w-[300px] sm:max-w-[500px] top-0 xl:top-[164px] ml-5 xl:ml-[869px] z-0">
-        <Image
-          src="/object-left.svg"
-          alt="object-left"
-          width={715}
-          height={715}
-          className="w-full h-auto rounded-[60px]"
-          priority
-        />
-      </div>
+      <TeamShapeRight />
 
       <div className="mt-[70px] space-y-16 flex flex-col items-center">
-        {team.map((member) => (
-          <div
+        {team.map((member, index) => (
+          <motion.div
             key={member.name}
             className="flex flex-col items-center gap-6 lg:gap-[42px] md:flex-row lg:max-w-[655px]"
+            custom={index} 
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.25 }}
           >
             {/* Portrait */}
             <div className="shrink-0">
@@ -78,7 +83,7 @@ const Team: React.FC = () => {
 
             {/* Divider + Text */}
             <div className="flex w-full h-full items-stretch gap-6 md:gap-[42px]">
-              <span className="hidden h-[190px] w-[1px] bg-[#CBA2A6] md:block" />
+              <span className="hidden h-[190px] w-px bg-[#CBA2A6] md:block" />
               <div className="text-left">
                 <p className="text-[24px] font-medium leading-8 text-[#66243E]">
                   <span className="block">{member.name.split(" ")[0]}</span>
@@ -97,7 +102,7 @@ const Team: React.FC = () => {
                
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

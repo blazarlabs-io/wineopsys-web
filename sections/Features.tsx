@@ -1,5 +1,9 @@
+'use client'
 import React from "react";
 import { Card, CardTitle, CardHeader, CardContent } from "@/components/ui/card";
+import { heroContainer } from "@/lib/motion/heroVariants";
+import { cardVariants } from "@/lib/motion/common";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const featureTiles = [
@@ -35,23 +39,42 @@ const featureTiles = [
   },
 ];
 
+const MotionCard = motion(Card);
+
 const Features: React.FC = () => {
   return (
     <section id="features" className=" mx-auto px-5 max-w-[1028px]">
       <div className="flex flex-col md:flex-row md:items-end md:justify-between">
         <div>
-          <h2 className="text-[35px] font-medium leading-[54px] relative z-10">
+          <motion.h2 
+            className="text-[35px] font-medium leading-[54px] relative z-10"
+            variants={heroContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.4 }}
+          >
             Key Features
-          </h2>
+          </motion.h2>
         </div>
       </div>
 
-      <span className="w-full h-0.5 bg-[#66243E] flex mt-[17px] relative z-10"></span>
+      <motion.span 
+        className="w-full h-0.5 bg-[#66243E] flex mt-[17px] relative z-10"
+        variants={heroContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.4 }}
+      ></motion.span>
 
       <div className="grid gap-4 md:grid-cols-3 mt-[37px]">
-        {featureTiles.map((feature) => (
-          <Card
+        {featureTiles.map((feature, index) => (
+          <MotionCard
             key={feature.title}
+            custom={index} 
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.25 }}
             className="
               group flex h-full flex-col relative
               bg-white 
@@ -85,7 +108,7 @@ const Features: React.FC = () => {
             <CardContent className="pt-0 text-xs leading-relaxed sm:text-[14px] sm:leading-4 text-[#66243E] group-hover:text-white z-10">
               {feature.body}
             </CardContent>
-          </Card>
+          </MotionCard>
         ))}
       </div>
     </section>
