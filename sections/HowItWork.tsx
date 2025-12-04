@@ -121,7 +121,7 @@ const HowItWork: FC = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.25 }}
-            className="relative flex items-center rounded-[22px] border border-[#E8C7D3] bg-[#FFF9FB] px-8 pr-[54px] pt-4 shadow-[0_10px_30px_rgba(102,36,62,0.12)]"
+            className="relative group flex items-center rounded-[22px] border border-[#E8C7D3] bg-[#FFF9FB] hover:bg-[#66243E] px-8 pr-[54px] pt-4 shadow-[0_10px_30px_rgba(102,36,62,0.12)]"
           >
             {/* Icon overlapped on the left */}
             <div className="absolute left-[-45px] top-1/2 flex h-[90px] w-[90px] -translate-y-1/2 items-center justify-center rounded-2xl bg-[#C27A8F]">
@@ -137,18 +137,32 @@ const HowItWork: FC = () => {
             {/* Content inside card */}
             <div className="ml-[70px] flex flex-col w-full items-start justify-between gap-6">
               <div>
-                <CardTitle className="text-[22px] font-medium text-[#66243E] leading-[26px]">
+                <CardTitle className="text-[22px] font-medium text-[#66243E] group-hover:text-white leading-[26px]">
                   {group.title}
                 </CardTitle>
 
-                <p className="mt-1 text-[14px] leading-4 text-[#66243E]">
+                <p className="mt-1 text-[14px] leading-4 text-[#66243E] group-hover:text-white">
                   {group.description}
                 </p>
               </div>
 
               <Button
                 variant="outline"
-                className="self-end rounded-full border-[#C27A8F] bg-transparent px-6 py-1 text-sm font-medium text-[#66243E] hover:bg-[#FDEFF4] cursor-pointer"
+                className="
+                  self-end rounded-full
+                  border border-[#C27A8F]
+                  bg-white                    /* buton alb by default */
+                  px-6 py-1 text-sm font-medium
+                  text-[#66243E]
+                  transition-colors
+
+                  /* group hover */
+                  group-hover:border-transparent
+
+                  /* button hover */
+                  hover:bg-[#FDEFF4]
+                  hover:text-[#66243E]
+                "
               >
                 Details
               </Button>

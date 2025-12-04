@@ -113,7 +113,7 @@ const Contacts: React.FC = () => {
                   </label>
                   <Input
                     placeholder="Your full name"
-                    className="h-9 border-[#66243E] bg-white text-xs placeholder:text-[#66243E]"
+                    className="h-9 border-[#66243E] bg-white text-xs placeholder:text-[#66243E] mt-2"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     required
@@ -126,7 +126,7 @@ const Contacts: React.FC = () => {
                   <Input
                     type="email"
                     placeholder="you@winery.com"
-                    className="h-9 border-[#66243E] bg-white text-xs placeholder:text-[#66243E]"
+                    className="h-9 border-[#66243E] bg-white text-xs placeholder:text-[#66243E] mt-2"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
@@ -141,7 +141,7 @@ const Contacts: React.FC = () => {
                   </label>
                   <Input
                     placeholder="Winery name"
-                    className="h-9 border-[#66243E] bg-white text-xs placeholder:text-[#66243E]"
+                    className="h-9 border-[#66243E] bg-white text-xs placeholder:text-[#66243E] mt-2"
                     value={company}
                     onChange={(e) => setCompany(e.target.value)}
                   />
@@ -152,7 +152,7 @@ const Contacts: React.FC = () => {
                   </label>
                   <Input
                     placeholder="Owner, Head winemaker, CFO…"
-                    className="h-9 border-[#66243E] bg-white text-xs placeholder:text-[#66243E]"
+                    className="h-9 border-[#66243E] bg-white text-xs placeholder:text-[#66243E] mt-2"
                     value={role}
                     onChange={(e) => setRole(e.target.value)}
                   />
@@ -166,7 +166,7 @@ const Contacts: React.FC = () => {
                 <Textarea
                   rows={4}
                   placeholder="Share a bit about your current workflow and what you’d like to improve."
-                  className="border-[#66243E] bg-white text-xs placeholder:text-[#66243E]"
+                  className="border-[#66243E] bg-white text-xs placeholder:text-[#66243E] mt-2"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                 />
