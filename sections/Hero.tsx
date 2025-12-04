@@ -1,7 +1,12 @@
 'use client';
-import React from "react";
+
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { heroContainer } from "@/lib/motion/heroVariants";
+import { motion } from "framer-motion";
+import HeroShapeLeft from "@/components/HeroShapeLeft";
+import HeroShapeTop from "@/components/HeroShapeTop";
+import HeroImageRight from "@/components/HeroImageRight";
+import HeroShapeBottom from "@/components/HeroShapeBottom";
 
 function scrollToSection(id: string) {
   if (typeof window === "undefined") return;
@@ -19,64 +24,46 @@ export default function Hero() {
       <div className="mx-auto px-5 max-w-[1028px] mb-[150px]">
         <div className="grid md:grid-cols-2 items-center gap-10">
           {/* object-left */}
-            <div className="absolute w-full max-w-[857px] top-[-172px] ml-[-700px] z-0">
-              <Image
-                src="/object-left.svg"
-                alt="object-left"
-                width={900}
-                height={1200}
-                className="w-full h-auto rounded-[60px]"
-                priority
-              />
-            </div>
+          <HeroShapeLeft />
           
           {/* TEXT */}
           <div className="">
-            <h1 className="relative mt-[150px] text-3xl font-medium leading-[54px] tracking-tight sm:text-4xl md:text-[50px] lg:w-[526px] z-10">
+            <motion.h1 
+              className="relative mt-[150px] text-3xl font-medium leading-[54px] tracking-tight sm:text-4xl md:text-[50px] lg:w-[526px] z-10"
+              variants={heroContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.4 }}
+            >
               The Digital Command Center for Wineries.
-            </h1>
+            </motion.h1>
 
             {/* object-top */}
-            <div className=" absolute w-full max-w-[421px] top-[-202px] ml-[330px] ">
-              <Image
-                src="/object-top.svg"
-                alt="object-top"
-                width={900}
-                height={1200}
-                className="w-full h-auto rounded-[60px]"
-                priority
-              />
-            </div>
+            <HeroShapeTop />
 
             {/* object-right */}
-            <div className=" absolute w-full max-w-[700px] top-[-58px] ml-[655px] ">
-              <Image
-                src="/vineyard-full-hero.png"
-                alt="object-right"
-                width={900}
-                height={1200}
-                className="w-full h-auto rounded-[60px]"
-                priority
-              />
-            </div>
+            <HeroImageRight />
 
             {/* object-bottom */}
-            <div className=" absolute w-full max-w-[521px] top-[380px] ml-[290px] ">
-              <Image
-                src="shapes/object-gray-romb.svg"
-                alt="object-top"
-                width={900}
-                height={1200}
-                className="w-full h-auto rounded-[60px]"
-                priority
-              />
-            </div>
+            <HeroShapeBottom />
 
-            <p className="relative max-w-xl text-sm mt-[41px] leading-[24px] text-[#66244E] md:text-[20px] z-10">
+            <motion.p 
+              className="relative max-w-xl text-sm mt-[41px] leading-6 text-[#66244E] md:text-[20px] z-10"
+              variants={heroContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.4 }}
+            >
               From grape to bottle, one system that orchestrates production, orders, traceability, and real-time decisions.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-wrap items-center gap-[35px] mt-[63px] relative z-10">
+            <motion.div 
+              className="flex flex-wrap items-center gap-[35px] mt-[63px] relative z-10"
+              variants={heroContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.4 }}
+            >
               <Button
                 size="lg"
                 className="rounded-full bg-[#66243E] px-7 text-sm font-medium text-white hover:bg-[#66243E] cursor-pointer"
@@ -92,7 +79,7 @@ export default function Hero() {
               >
                 Download overview / PDF
               </a>
-            </div>
+            </motion.div>
 
           </div>
 

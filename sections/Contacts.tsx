@@ -1,11 +1,16 @@
 'use client'
 
 import React, { useState } from "react";
+// Components UI
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+// Motion
+import { heroContainer } from "@/lib/motion/heroVariants";
+import { itemFromBottom, itemFromright } from "@/lib/motion/common";
+import { motion } from "framer-motion";
 
 const Contacts: React.FC = () => {
 
@@ -58,13 +63,21 @@ const Contacts: React.FC = () => {
     }
   }
 
+  const MotionCard = motion(Card);
+
   return (
     <section
       id="contact"
       className="space-y-8 mx-auto px-5 max-w-[1028px] mt-[100px]"
     >
       <div className="grid gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] md:items-start">
-        <div className="space-y-4">
+        <motion.div 
+          className="space-y-4"
+          variants={heroContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+        >
           <h2 className="text-2xl font-medium tracking-tight md:text-[35px] md:leading-[54px] z-10 relative">
             Contact / Call to Action
           </h2>
@@ -82,9 +95,15 @@ const Contacts: React.FC = () => {
             Share a few details about your winery and we will get back to
             you with a tailored demo proposal.
           </p>
-        </div>
+        </motion.div>
 
-        <Card className="border-[#66243E] bg-white">
+        <MotionCard 
+          className="border-[#66243E] bg-white"
+          variants={itemFromright}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+        >
           <CardContent className="space-y-4 pt-6 text-xs">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid gap-3 md:grid-cols-2">
@@ -191,15 +210,21 @@ const Contacts: React.FC = () => {
               </div>
             </form>
           </CardContent>
-        </Card>
+        </MotionCard>
       </div>
 
-      <div className="mt-8 flex flex-col items-center justify-between gap-3 mb-[50px] border-t border-[#66243E] pt-6 text-[11px] text-[#66243E] md:flex-row">
+      <motion.div 
+        className="mt-8 flex flex-col items-center justify-between gap-3 mb-[50px] border-t border-[#66243E] pt-6 text-[11px] text-[#66243E] md:flex-row"
+        variants={itemFromBottom}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.4 }}
+      >
         <span>© {new Date().getFullYear()} WineOpSys. All rights reserved.</span>
         <span className="text-[#66243E]">
           Built for wineries that want clarity from grape to bottle.
         </span>
-      </div>
+      </motion.div>
     </section>
   );
 };
