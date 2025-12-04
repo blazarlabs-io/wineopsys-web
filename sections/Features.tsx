@@ -88,7 +88,7 @@ const Features: React.FC = () => {
           >
             {/* Decorative SVG Shape */}
             <Image
-              src="/shapes/feature-item-shape.svg" 
+              src="/shapes/feature-item-shape.svg"
               alt=""
               width={103}
               height={99}
@@ -96,10 +96,28 @@ const Features: React.FC = () => {
                 absolute left-0 top-0 z-0
                 pointer-events-none 
                 select-none
-                transition-opacity duration-200
-                group-hover:opacity-90
+                transition-opacity duration-500
+                opacity-100
+                group-hover:opacity-0
               "
             />
+
+            {/* Shape hover  */}
+            <Image
+              src="/shapes/feature-item-shape-color.svg"
+              alt=""
+              width={103}
+              height={99}
+              className="
+                absolute left-0 top-0 z-0
+                pointer-events-none 
+                select-none
+                transition-opacity duration-500
+                opacity-0
+                group-hover:opacity-100
+              "
+            />
+
             <CardHeader className="z-20">
               <CardTitle className="text-sm sm:text-[20px] sm:leading-6 font-medium text-[#66243E] group-hover:text-white">
                 {feature.title}

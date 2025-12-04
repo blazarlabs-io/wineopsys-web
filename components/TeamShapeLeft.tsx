@@ -8,10 +8,10 @@ const TeamShapeLeft: React.FC = () => {
     <>
       <motion.div
         className="hidden xl:flex absolute w-full max-w-[500px] sm:max-w-[715px] top-0 xl:top-[304px] ml-5 xl:ml-[-658px] z-0"
-        initial={{ y: -10, rotate: -2 }}
-        animate={{ y: [ -20, 10, -20 ], rotate: [ -3, 3, -3 ] }}
+        initial={{ y: -2, rotate: -2 }}
+        animate={{ y: [ -60, 20, -40 ], rotate: [ -8, 3, -6 ] }}
         transition={{
-          duration: 25,
+          duration: 20,
           repeat: Infinity,
           ease: "easeInOut",
         }}

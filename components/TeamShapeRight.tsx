@@ -8,8 +8,8 @@ const TeamShapeRight: React.FC = () => {
     <>
       <motion.div
         className="hidden xl:flex absolute w-full max-w-[300px] sm:max-w-[500px] top-0 xl:top-[164px] ml-5 xl:ml-[869px] z-0"
-        initial={{ y: -10, rotate: -2 }}
-        animate={{ y: [ -20, 10, -20 ], rotate: [ -3, 3, -3 ] }}
+        initial={{ y: -1, rotate: -2 }}
+        animate={{ y: [ -60, 20, -40 ], rotate: [ -8, 3, -6 ] }}
         transition={{
           duration: 25,
           repeat: Infinity,
