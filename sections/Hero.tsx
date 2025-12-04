@@ -85,12 +85,13 @@ export default function Hero() {
                 Request a Demo
               </Button>
 
-              <button
-                onClick={() => scrollToSection("features")}
+              <a
+                href="/files/overview.pdf"
+                download
                 className="text-[20px] font-medium text-[#66244e] underline-offset-4 hover:underline cursor-pointer"
               >
                 Download overview / PDF
-              </button>
+              </a>
             </div>
 
           </div>
