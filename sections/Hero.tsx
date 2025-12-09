@@ -21,7 +21,7 @@ export default function Hero() {
   return (
     <section id="home" className="relative flex pt-20">
       {/* CONTAINER TEXT */}
-      <div className="mx-auto px-5 max-w-[1028px] mb-[150px]">
+      <div className="mx-auto w-full px-6 xl:px-0 max-w-[1028px] mb-[100px] lg:mb-[150px]">
         <div className="grid md:grid-cols-2 items-center gap-10">
           {/* object-left */}
           <HeroShapeLeft />
@@ -29,7 +29,13 @@ export default function Hero() {
           {/* TEXT */}
           <div className="">
             <motion.h1 
-              className="relative mt-[150px] text-3xl font-medium leading-[54px] tracking-tight sm:text-4xl md:text-[50px] lg:w-[526px] z-10"
+              className="
+                relative mt-[200px] z-10 text-[35px] font-medium leading-[42px] max-w-[320px]
+                sm:mt-[150px]
+                md:mt-[150px] 
+                xl:text-[50px] xl:leading-[54px]
+                "
+
               variants={heroContainer}
               initial="hidden"
               whileInView="visible"
@@ -48,7 +54,11 @@ export default function Hero() {
             <HeroShapeBottom />
 
             <motion.p 
-              className="relative max-w-xl text-sm mt-[41px] leading-6 text-[#66244E] md:text-[20px] z-10"
+              className="
+                relative text-[#66244E] z-10 max-w-[531px] 
+                text-[18px] mt-[20px] leading-[21px]
+                lg:mt-[41px] lg:leading-6  md:text-[20px]"
+
               variants={heroContainer}
               initial="hidden"
               whileInView="visible"
@@ -58,7 +68,7 @@ export default function Hero() {
             </motion.p>
 
             <motion.div 
-              className="flex flex-wrap items-center gap-[35px] mt-[63px] relative z-10"
+              className="flex flex-wrap items-center gap-[15px] lg:gap-[35px] mt-[30px] lg:mt-[63px] relative z-10"
               variants={heroContainer}
               initial="hidden"
               whileInView="visible"
@@ -66,7 +76,7 @@ export default function Hero() {
             >
               <Button
                 size="lg"
-                className="rounded-full bg-[#66243E] px-7 text-sm font-medium text-white hover:bg-[#66243E] cursor-pointer"
+                className="rounded-full bg-[#66243E] px-[22px] text-[20px] leading-[24px] font-medium text-white hover:bg-[#66243E] cursor-pointer"
                 onClick={() => scrollToSection("contact")}
               >
                 Request a Demo
@@ -75,7 +85,7 @@ export default function Hero() {
               <a
                 href="/files/overview.pdf"
                 download
-                className="text-[20px] font-medium text-[#66244e] underline-offset-4 hover:underline cursor-pointer"
+                className="text-[18px] lg:text-[20px] font-medium text-[#66244e] underline-offset-4 hover:underline cursor-pointer"
               >
                 Download overview / PDF
               </a>

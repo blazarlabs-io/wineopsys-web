@@ -16,17 +16,6 @@ export default function Home() {
       <Hero />
       <Features />
       <div className='relative'>
-        {/* object-left */}
-        {/* <div className="pointer-events-none absolute right-[-120px] top-[-180px] w-[500px] sm:w-[857px] z-0">
-          <Image
-            src="/object-left.svg"
-            alt="object-left"
-            width={900}
-            height={1200}
-            className="w-full h-auto rounded-[60px]"  
-            priority
-          />
-        </div> */}
         <HowItWork />
       </div>
       

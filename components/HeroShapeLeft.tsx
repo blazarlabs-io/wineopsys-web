@@ -7,7 +7,13 @@ const HeroShapeLeft: React.FC = () => {
   return (
     <>
       <motion.div
-        className="absolute w-full max-w-[857px] top-[-172px] ml-[-700px] z-0"
+        className="
+          absolute z-0 w-[525px]
+          top-[10px] ml-[-371px] 
+          md:top-[14px] md:ml-[-371px]  
+          lg:top-[-14px] lg:ml-[-300px] lg:max-w-[857px] 
+          xl:top-[-152px] xl:ml-[-700px] xl:w-[857px]"
+
         initial={{ y: -10, rotate: -2 }}
         animate={{ y: [ -20, 10, -20 ], rotate: [ -3, 3, -3 ] }}
         transition={{

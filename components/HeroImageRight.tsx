@@ -7,7 +7,12 @@ const HeroImageRight: React.FC = () => {
   return (
     <>
       <motion.div
-        className="absolute w-full max-w-[700px] top-[-58px] ml-[655px]"
+        className="
+          absolute w-[317px] 
+          top-[-32px] left-[182px]
+          sm:left-[425px] sm:top-[-118px] sm:w-[726px]
+          lg:top-[-58px] lg:left-auto lg:ml-[655px] lg:w-full lg:max-w-[700px]"
+
         initial={{ y: 10, scale: 1 }}
         animate={{ y: [-5, 20, -5], scale: [1, 1.03, 1] }}
         transition={{

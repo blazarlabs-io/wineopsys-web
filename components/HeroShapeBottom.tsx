@@ -7,7 +7,13 @@ const HeroShapeBottom: React.FC = () => {
   return (
     <>
       <motion.div
-        className="absolute w-full max-w-[521px] top-[380px] ml-[290px]"
+        className="
+          absolute w-full max-w-[521px] 
+          top-[435px] ml-[255px]
+          sm:top-[435px] sm:ml-[55px]
+          lg:ml-[290px] lg:max-w-[501px]
+          xl:top-[380px]"
+
         initial={{ y: 0 }}
         animate={{ y: [0, -10, 0] }}
         transition={{

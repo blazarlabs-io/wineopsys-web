@@ -39,15 +39,15 @@ const featureTiles = [
   },
 ];
 
-const MotionCard = motion(Card);
+const MotionCard = motion.create(Card);
 
 const Features: React.FC = () => {
   return (
-    <section id="features" className=" mx-auto px-5 max-w-[1028px]">
+    <section id="features" className=" mx-auto px-6 max-w-[1028px]">
       <div className="flex flex-col md:flex-row md:items-end md:justify-between">
         <div>
           <motion.h2 
-            className="text-[35px] font-medium leading-[54px] relative z-10"
+            className="text-[25px] lg:text-[35px] font-medium leading-[54px] relative z-10"
             variants={heroContainer}
             initial="hidden"
             whileInView="visible"
@@ -59,7 +59,7 @@ const Features: React.FC = () => {
       </div>
 
       <motion.span 
-        className="w-full h-0.5 bg-[#66243E] flex mt-[17px] relative z-10"
+        className="w-full h-0.5 bg-[#66243E] flex mt-[20px] lg:mt-[17px] relative z-10"
         variants={heroContainer}
         initial="hidden"
         whileInView="visible"
@@ -119,11 +119,11 @@ const Features: React.FC = () => {
             />
 
             <CardHeader className="z-20">
-              <CardTitle className="text-sm sm:text-[20px] sm:leading-6 font-medium text-[#66243E] group-hover:text-white">
+              <CardTitle className="text-[20px] sm:text-[20px] sm:leading-6 font-medium text-[#66243E] group-hover:text-white">
                 {feature.title}
               </CardTitle>
             </CardHeader>
-            <CardContent className="pt-0 text-xs leading-relaxed sm:text-[14px] sm:leading-4 text-[#66243E] group-hover:text-white z-10">
+            <CardContent className="pt-0 text-[14px]sm:text-[14px] leading-4 text-[#66243E] group-hover:text-white z-10">
               {feature.body}
             </CardContent>
           </MotionCard>
