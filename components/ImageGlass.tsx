@@ -8,7 +8,11 @@ const ImageGlass: React.FC = () => {
     <>
       <div className="relative">
         <motion.div 
-          className="pointer-events-none absolute right-[-329px] top-[250px] w-[297px] z-0"
+          className="
+            pointer-events-none absolute z-0
+            right-[216px] top-[-50px] w-[124px]
+            lg:right-[-329px] lg:top-[250px] lg:w-[297px]"
+
           initial={{ y: -1, rotate: -2 }}
           animate={{ y: [ -20, 10, -20 ], rotate: [ -3, 3, -3 ] }}
           transition={{

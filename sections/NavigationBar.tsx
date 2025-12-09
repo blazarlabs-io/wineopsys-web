@@ -31,12 +31,12 @@ export default function NavigationBar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-40 border-b border-slate-200 bg-white">
-      <div className="mx-auto max-w-[1028px] flex items-center justify-between px-4 py-4">
+      <div className="mx-auto max-w-[1028px] flex items-center justify-between px-6 lg:px-0 py-4">
         <div
           className="flex cursor-pointer items-center gap-2"
           onClick={() => handleNavClick("home")}
         >
-          <div className="flex flex-col ml-[20px] leading-tight xl:ml-[-180px]">
+          <div className="flex flex-col xl:ml-[-180px]">
             <Image src="/Logo-navbar.svg" alt="WineOpSys" width={168} height={27} />
           </div>
         </div>
@@ -92,7 +92,7 @@ export default function NavigationBar() {
       {/* Mobile menu dropdown */}
       {isMobileOpen && (
         <nav className="xl:hidden border-t border-slate-200 bg-white/95 backdrop-blur-sm">
-          <div className="mx-auto max-w-[1028px] px-4 py-3 flex flex-col gap-2">
+          <div className="mx-auto max-w-[1028px] px-6 py-3 flex flex-col gap-2">
             {navItems.map((item) => (
               <button
                 key={item.id}

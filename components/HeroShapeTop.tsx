@@ -7,7 +7,7 @@ const HeroShapeTop: React.FC = () => {
   return (
     <>
       <motion.div
-        className="absolute w-full max-w-[421px] top-[-202px] ml-[330px]"
+        className="hidden xl:flex absolute w-full max-w-[421px] top-[-202px] ml-[330px]"
         initial={{ y: 0, rotate: 0 }}
         animate={{ y: [5, -15, 5], rotate: [1, -2, 1] }}
         transition={{

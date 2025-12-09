@@ -45,11 +45,11 @@ const personas2 = [
   },
 ];
 
-const MotionCard = motion(Card);
+const MotionCard = motion.create(Card);
 
 const WhoUsesWineopsys: React.FC = () => {
   return (
-    <section id="who-uses" className="mx-auto px-5 max-w-[1028px] mt-[100px]">
+    <section id="who-uses" className="mx-auto px-5 max-w-[1028px] mt-[100px] relative">
       <motion.div 
         className="w-full space-y-3"
         variants={heroContainer}
@@ -57,11 +57,11 @@ const WhoUsesWineopsys: React.FC = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.4 }}
       >
-        <h2 className="text-2xl font-medium tracking-tight md:text-[35px] md:leading-[54px]">
+        <h2 className="text-2xl leading-[30px] font-medium md:text-[35px] md:leading-[54px] z-20">
           Who Uses WineOpSys
         </h2>
-        <span className="w-[550px] h-0.5 bg-[#66243E] flex mt-[17px]"></span>
-        <p className="text-sm lg:text-[20px] lg:leading-6 text-[#66243E] max-w-[550px] mt-[27px]">
+        <span className="w-[550px] h-0.5 bg-[#66243E] flex mt-[28px] sm:mt-[17px]"></span>
+        <p className="text-[18px] leading-[21px] lg:text-[20px] lg:leading-6 text-[#66243E] max-w-[550px] mt-[27px] mb-[351px] sm:mb-0">
           WineOpSys mirrors the real production flow of a winery and digitises it in modular blocks. Each module can be activated when the winery is ready, while data stays connected across the full process.
         </p>
       </motion.div>

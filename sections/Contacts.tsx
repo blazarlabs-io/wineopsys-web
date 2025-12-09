@@ -63,7 +63,7 @@ const Contacts: React.FC = () => {
     }
   }
 
-  const MotionCard = motion(Card);
+  const MotionCard = motion.create(Card);
 
   return (
     <section

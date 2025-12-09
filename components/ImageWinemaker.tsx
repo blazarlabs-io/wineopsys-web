@@ -8,7 +8,11 @@ const ImageWinemaker: React.FC = () => {
     <>
       <div className="relative">
         <motion.div 
-          className="pointer-events-none absolute right-[-1009px] top-[-200px] w-[735px] z-0"
+          className="
+            pointer-events-none absolute z-0
+            right-[-14px] top-[-270px] w-[266px]
+            lg:right-[-1009px] lg:top-[-200px] lg:w-[735px]"
+
           initial={{ y: 0, rotate: 0 }}
           animate={{ y: [5, -15, 5], rotate: [1, -2, 1] }}
           transition={{
