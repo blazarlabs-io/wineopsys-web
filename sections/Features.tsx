@@ -11,31 +11,37 @@ const featureTiles = [
     title: "End-to-end supply chain tracking for wine production",
     body:
       "Maintains a linked record for each wine lot from vineyard block through fermentation, bottling, storage, and dispatch.",
+    headerImage: 'supply_chain.jpg'
   },
   {
     title: "Real-time single source of truth",
     body:
       "Provides one live view of volumes, movements, and status for winemakers, managers, and finance.",
+    headerImage: "source_of_truth.jpg"
   },
   {
     title: "Proactive planning via demand and supply mapping",
     body:
       "Aligns planned sales, available stock, and upcoming harvest so production plans can be made early and adjusted with confidence.",
+    headerImage: "planning.jpg"
   },
   {
     title: "Timeline and custom task management system",
     body:
       "Structures vineyard and cellar work into tasks with timing, owners, and status across all production stages.",
+    headerImage: "management_system.jpg"
   },
   {
     title: "Custom smart action framework",
     body:
       "Turns complex procedures into guided, reusable actions that reflect the winery’s own methods and standards.",
+    headerImage: "framework.jpg"
   },
   {
     title: "Flexible reporting",
     body:
       "Generates compliance registers, operational summaries, and management reports directly from structured production data.",
+    headerImage: "reporting.jpg"
   },
 ];
 
@@ -80,50 +86,66 @@ const Features: React.FC = () => {
               bg-white 
               shadow-[0_2px_6px_rgba(0,0,0,0.12)]
               transition-all duration-500
-              hover:-translate-y-0.5
-              hover:shadow-[0_6px_16px_rgba(0,0,0,0.16)]
-              hover:bg-[#66243E] py-6 gap-0
+              hover:shadow-[0_12px_32px_rgba(0,0,0,0.28)]
+              hover:bg-[#66243E] py-6 gap-0 pt-0 
               overflow-hidden z-10
             "
           >
-            {/* Decorative SVG Shape */}
-            <Image
-              src="/shapes/feature-item-shape.svg"
-              alt=""
-              width={103}
-              height={99}
-              className="
-                absolute left-0 top-0 z-0
-                pointer-events-none 
-                select-none
-                transition-opacity duration-500
-                opacity-100
-                group-hover:opacity-0
-              "
-            />
+            <div className="w-full overflow-hidden">
+              <Image
+                src={`/features/${feature.headerImage}`}
+                alt=""
+                width={333}
+                height={146}
+                className="
+                  pointer-events-none 
+                  select-none w-full
+                  transition-transform duration-500 ease-out
+                  group-hover:scale-110
+                "
+              />
+            </div>
+            
 
-            {/* Shape hover  */}
-            <Image
-              src="/shapes/feature-item-shape-color.svg"
-              alt=""
-              width={103}
-              height={99}
-              className="
-                absolute left-0 top-0 z-0
-                pointer-events-none 
-                select-none
-                transition-opacity duration-500
-                opacity-0
-                group-hover:opacity-100
-              "
-            />
+            <CardHeader className="z-20 relative">
+              <div className="z-0">
+                {/* Decorative SVG Shape */}
+                <Image
+                  src="/shapes/feature-item-shape.svg"
+                  alt=""
+                  width={103}
+                  height={99}
+                  className="
+                    absolute left-0 top-0 z-0
+                    pointer-events-none 
+                    select-none
+                    transition-opacity duration-500
+                    opacity-100
+                    group-hover:opacity-0
+                  "
+                />
 
-            <CardHeader className="z-20">
-              <CardTitle className="text-[20px] sm:text-[20px] sm:leading-6 font-medium text-[#66243E] group-hover:text-white">
+                {/* Shape hover  */}
+                <Image
+                  src="/shapes/feature-item-shape-color.svg"
+                  alt=""
+                  width={103}
+                  height={99}
+                  className="
+                    absolute left-0 top-0 z-0
+                    pointer-events-none 
+                    select-none
+                    transition-opacity duration-500
+                    opacity-0
+                    group-hover:opacity-100
+                  "
+                />
+              </div>
+              <CardTitle className="text-[20px] sm:text-[20px] sm:leading-6 font-medium text-[#66243E] group-hover:text-white relative z-10">
                 {feature.title}
               </CardTitle>
             </CardHeader>
-            <CardContent className="pt-0 text-[14px]sm:text-[14px] leading-4 text-[#66243E] group-hover:text-white z-10">
+            <CardContent className="pt-0 sm:pt-[13px] text-[14px]sm:text-[14px] leading-4 text-[#66243E] group-hover:text-white relative z-20">
               {feature.body}
             </CardContent>
           </MotionCard>

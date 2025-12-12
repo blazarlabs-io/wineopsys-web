@@ -12,6 +12,8 @@ import { heroContainer } from "@/lib/motion/heroVariants";
 import { itemFromBottom, itemFromright } from "@/lib/motion/common";
 import { motion } from "framer-motion";
 
+const MotionCard = motion.create(Card);
+
 const Contacts: React.FC = () => {
 
   const [name, setName] = useState("");
@@ -62,8 +64,6 @@ const Contacts: React.FC = () => {
       setLoading(false);
     }
   }
-
-  const MotionCard = motion.create(Card);
 
   return (
     <section
@@ -213,18 +213,6 @@ const Contacts: React.FC = () => {
         </MotionCard>
       </div>
 
-      <motion.div 
-        className="mt-8 flex flex-col items-center justify-between gap-3 mb-[50px] border-t border-[#66243E] pt-6 text-[11px] text-[#66243E] md:flex-row"
-        variants={itemFromBottom}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.4 }}
-      >
-        <span>© {new Date().getFullYear()} WineOpSys. All rights reserved.</span>
-        <span className="text-[#66243E]">
-          Built for wineries that want clarity from grape to bottle.
-        </span>
-      </motion.div>
     </section>
   );
 };

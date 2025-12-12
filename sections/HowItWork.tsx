@@ -113,7 +113,7 @@ const HowItWork: FC = () => {
       {/* Module cards */}
       <div className="
         mt-[22px] grid gap-x-[26px] gap-y-[24px] grid-cols-2 relative z-10
-        sm:gap-x-[126px] sm:gap-y-[55px]  
+        sm:gap-x-[80px] sm:gap-y-[55px]  
         lg:grid-cols-3 lg:mt-[50px]">
 
         {moduleGroups.map((group, index) => (
@@ -128,6 +128,7 @@ const HowItWork: FC = () => {
               relative group flex items-center ml-[25px] px-8 pr-[8px] pt-[13px] pb-[8px]
               border rounded-[8px] border-[#E8C7D3] bg-[#FFF9FB] hover:bg-[#66243E] 
               sm:pt-[12px] sm:pr-[54px] sm:pt-4 sm:ml-[43px]
+              lg:pb-[20px]
               shadow-[0_10px_30px_rgba(102,36,62,0.12)]"
           >
             {/* Icon overlapped on the left */}
@@ -159,12 +160,13 @@ const HowItWork: FC = () => {
 
               <div
                 className="
-                  self-end rounded-full
+                  self-end rounded-full cursor-pointer
                   border border-[#C27A8F]
                   bg-white
-                  px-[11px] sm:px-6 leading-none py-[5px] sm:py-1 text-[7px] sm:text-sm font-medium
+                  px-[11px] leading-none py-[5px] text-[7px] font-medium
                   text-[#66243E]
                   transition-colors
+                  sm:text-sm sm:py-[10px] sm:px-6
 
                   /* group hover */
                   group-hover:border-transparent

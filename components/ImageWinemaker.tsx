@@ -10,7 +10,7 @@ const ImageWinemaker: React.FC = () => {
         <motion.div 
           className="
             pointer-events-none absolute z-0
-            right-[-14px] top-[-270px] w-[266px]
+            right-[-14px] top-[-320px] w-[266px]
             lg:right-[-1009px] lg:top-[-200px] lg:w-[735px]"
 
           initial={{ y: 0, rotate: 0 }}

@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { heroContainer } from "@/lib/motion/heroVariants";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import HeroShapeLeft from "@/components/HeroShapeLeft";
 import HeroShapeTop from "@/components/HeroShapeTop";
 import HeroImageRight from "@/components/HeroImageRight";
@@ -33,9 +34,8 @@ export default function Hero() {
                 relative mt-[200px] z-10 text-[35px] font-medium leading-[42px] max-w-[320px]
                 sm:mt-[150px]
                 md:mt-[150px] 
-                xl:text-[50px] xl:leading-[54px]
+                xl:text-[50px] xl:leading-[54px] xl:max-w-none
                 "
-
               variants={heroContainer}
               initial="hidden"
               whileInView="visible"
@@ -52,6 +52,25 @@ export default function Hero() {
 
             {/* object-bottom */}
             <HeroShapeBottom />
+
+            {/* object-Laptop */}
+            <div className="hidden lg:block">
+              <div className="
+                absolute w-full max-w-[356px] 
+                top-[435px] ml-[255px]
+                sm:top-[479px] sm:ml-[55px]
+                lg:ml-[600px] lg:max-w-[356px]
+                xl:top-[479px]">
+                <Image
+                  src="/laptop.png"
+                  alt="object-laptop-shape"
+                  width={900}
+                  height={1200}
+                  className="w-full h-auto"
+                  priority
+                />
+              </div>
+            </div>
 
             <motion.p 
               className="
