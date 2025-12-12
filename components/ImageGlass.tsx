@@ -10,7 +10,7 @@ const ImageGlass: React.FC = () => {
         <motion.div 
           className="
             pointer-events-none absolute z-0
-            right-[216px] top-[-50px] w-[124px]
+            right-[216px] top-[-100px] w-[124px]
             lg:right-[-329px] lg:top-[250px] lg:w-[297px]"
 
           initial={{ y: -1, rotate: -2 }}

@@ -10,10 +10,10 @@ const HowItWorkShape: React.FC = () => {
         {/* Shape Bottom Gray */}
         <motion.div 
           className="pointer-events-none absolute right-[209px] top-[-320px] w-[457px] z-0"
-          initial={{ y: -10, rotate: -2 }}
-          animate={{ y: [ -20, 10, -20 ], rotate: [ -3, 3, -3 ] }}
+          initial={{ y: -2, rotate: -2 }}
+          animate={{ y: [ -25, 10, -30 ], rotate: [ -7, 3, -5 ] }}
           transition={{
-            duration: 35,
+            duration: 15,
             repeat: Infinity,
             ease: "easeInOut",
           }}

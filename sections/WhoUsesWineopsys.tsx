@@ -27,7 +27,7 @@ const personas1 = [
 const personas2 = [
   {
     id: 3,
-    role: "Cellar and production managers",
+    role: "Production and operations managers",
     gain:
       "Plan and coordinate work across shifts and teams with clear timelines, task lists, and capacity awareness.",
   },
@@ -61,18 +61,20 @@ const WhoUsesWineopsys: React.FC = () => {
           Who Uses WineOpSys
         </h2>
         <span className="w-[550px] h-0.5 bg-[#66243E] flex mt-[28px] sm:mt-[17px]"></span>
-        <p className="text-[18px] leading-[21px] lg:text-[20px] lg:leading-6 text-[#66243E] max-w-[550px] mt-[27px] mb-[351px] sm:mb-0">
+        <p className="text-[18px] leading-[21px] lg:text-[20px] lg:leading-6 text-[#66243E] max-w-[550px] mt-[27px] mb-[350px] lg:mb-[-100px] sm:mb-0">
           WineOpSys mirrors the real production flow of a winery and digitises it in modular blocks. Each module can be activated when the winery is ready, while data stays connected across the full process.
         </p>
       </motion.div>
-      <div className="grid gap-[38px]  mt-[70px] lg:max-w-[320px] relative">
+      <div className="grid gap-4 lg:gap-[38px] mt-[70px] lg:max-w-[320px] relative">
         {/* Image Glass Center */}
         <ImageGlass />
 
         {/* Image Winemaker Right */}
         <ImageWinemaker />
         
-        {personas1.map((persona, index) => (
+        {personas1.map((persona, index) => {
+          const isEven = index % 2 === 0;
+          return(
           <MotionCard
             key={persona.role}
             custom={index} 
@@ -80,15 +82,19 @@ const WhoUsesWineopsys: React.FC = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.25 }}
-            className="h-full border-0 bg-white shadow-none"
+            className={`
+              h-full border-0 bg-white shadow-none
+              flex py-0 lg:py-[22px]
+              ${isEven ? "mr-auto text-left" : "ml-auto"}
+            `}
           >
             <div className="flex relative">
-              <div className="relative h-[82px] w-[82px] rotate-45 rounded-[24px] bg-[#6B1F3A] ml-7 z-10">
-                <span className="absolute inset-0 flex -rotate-45 items-center justify-center text-[42px] font-bold text-white leading-[50px]">
+              <div className="relative h-[63px] w-[63px] lg:h-[82px] lg:w-[82px] rotate-45 rounded-[24px] bg-[#6B1F3A] ml-7 z-10">
+                <span className="absolute inset-0 flex -rotate-45 items-center justify-center text-[32px] lg:text-[42px] font-bold text-white leading-[50px]">
                   {persona.id}
                 </span>
               </div>
-              <div className="pointer-events-none absolute right-[81px] top-[54px] w-[154px] z-0">
+              <div className="pointer-events-none absolute right-[66px] top-[30px] w-[118px] lg:w-[154px] lg:right-[81px] lg:top-[54px] z-0">
                 <Image
                   src="/object-left.svg"
                   alt="object-left"
@@ -98,20 +104,22 @@ const WhoUsesWineopsys: React.FC = () => {
                   priority
                 />
               </div>
-              <CardHeader className="pb-2 z-10 relative">
-                <CardTitle className="text-[22px] font-medium leading-[26px] text-[#66243E]">
+              <CardHeader className="lg:pb-2 z-10 relative w-[175px] sm:w-none pt-[10px]">
+                <CardTitle className="text-[17px] lg:text-[22px] font-medium leading-[20px] lg:leading-[26px] text-[#66243E]">
                   {persona.role}
                 </CardTitle>
               </CardHeader>
             </div>
-            <CardContent className="pt-0 text-[14px] leading-4 text-[#66243E] z-10 relative">
+            <CardContent className="pt-0 text-[13px] lg:text-[14px] leading-[15px] lg:leading-4 text-[#66243E] z-10 relative max-w-[258px] md:max-w-none">
               {persona.gain}
             </CardContent>
           </MotionCard>
-        ))}
+        )})}
       </div>
-      <div className="grid gap-6 grid-cols-1 lg:grid-cols-3 mt-21">
-        {personas2.map((persona, index) => (
+      <div className="grid gap-4 grid-cols-1 lg:grid-cols-3 mt-4 lg:mt-21">
+        {personas2.map((persona, index) => {
+          const isEven = index % 2 === 0;
+          return(
           <MotionCard
             key={persona.role}
             custom={index} 
@@ -119,15 +127,19 @@ const WhoUsesWineopsys: React.FC = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.25 }}
-            className="h-full border-0 bg-white shadow-none"
+            className={`
+              h-full border-0 bg-white shadow-none
+              flex py-0 lg:py-[22px]
+              ${isEven ? "mr-auto text-left" : "ml-auto"}
+            `}
           >
             <div className="flex relative">
-              <div className="relative h-[82px] w-[82px] rotate-45 rounded-[24px] bg-[#6B1F3A] ml-7 z-10">
-                <span className="absolute inset-0 flex -rotate-45 items-center justify-center text-[42px] font-bold text-white leading-[50px]">
+              <div className="relative h-[63px] w-[63px] lg:h-[82px] lg:w-[82px] rotate-45 rounded-[24px] bg-[#6B1F3A] ml-7 z-10">
+                <span className="absolute inset-0 flex -rotate-45 items-center justify-center text-[32px] lg:text-[42px] font-bold text-white leading-[50px]">
                   {persona.id}
                 </span>
               </div>
-              <div className="pointer-events-none absolute right-[81px] top-[54px] w-[154px] z-0">
+              <div className="pointer-events-none absolute right-[66px] top-[30px] w-[118px] lg:w-[154px] lg:top-[8px] lg:right-[81px] lg:top-[54px] z-0">
                 <Image
                   src="/object-left.svg"
                   alt="object-left"
@@ -137,17 +149,17 @@ const WhoUsesWineopsys: React.FC = () => {
                   priority
                 />
               </div>
-              <CardHeader className="pb-2 z-10 relative">
-                <CardTitle className="text-[22px] font-medium leading-[26px] text-[#66243E]">
+              <CardHeader className="pb-2 z-10 relative w-[175px] sm:w-none">
+                <CardTitle className="text-[17px] lg:text-[22px] font-medium leading-[20px] lg:leading-[26px] text-[#66243E]">
                   {persona.role}
                 </CardTitle>
               </CardHeader>
             </div>
-            <CardContent className="pt-0 text-[14px] leading-4 text-[#66243E] z-10 relative">
+            <CardContent className="pt-0 text-[14px] leading-4 text-[#66243E] z-10 relative max-w-[258px] md:max-w-none">
               {persona.gain}
             </CardContent>
           </MotionCard>
-        ))}
+        )})}
       </div>
     </section>
   );
