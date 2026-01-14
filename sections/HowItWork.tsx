@@ -1,7 +1,9 @@
 'use client'
 
 import { FC } from "react";
+import { useRouter } from "next/navigation";
 import { Card, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { heroContainer } from "@/lib/motion/heroVariants";
@@ -15,66 +17,78 @@ const moduleGroups = [
     icon: "/icons/vineyards.svg",
     description:
       "Vineyards — Field data meets compliance.",
+    link: "/modules/#vineyards",
   },
   {
     title: "Grapes",
     icon: "/icons/grapes.svg",
     description:
       "Grapes — Batch intake and quality control.",
+    link: "/modules/#grapes",
   },
   {
     title: "Wine Production",
     icon: "/icons/wine-production.svg",
     description:
       "Wine Production — Primary + Secondary vinification.",
+    link: "/modules/#wine-production",
   },
   {
     title: "Order Management",
     icon: "/icons/order-management.svg",
     description:
       "Order Management — Supply and fulfillment. ",
+    link: "/modules/#order-management",
   },
   {
     title: "Vessel Management",
     icon: "/icons/vessel-management.svg",
     description:
       "Vessel Management — Tanks, barrels, capacity. ",
+    link: "/modules/#vessel-management",
   },
   {
     title: "Consumables",
     icon: "/icons/consumables.svg",
     description:
       "Consumables — Chemistry and expendables. ",
+    link: "/modules/#consumables",
   },
   {
     title: "Storage",
     icon: "/icons/storage.svg",
     description:
       "Storage — Warehouse stock tracking.",
+    link: "/modules/#storage",
   },
   {
     title: "Team & Taskspes",
     icon: "/icons/team-tasks.svg",
     description:
       "Team & Tasks — Assignments and progress. ",
+    link: "/modules/#team-tasks",
   },
   {
     title: "Reports",
     icon: "/icons/reports.svg",
     description:
       "Reports — Analytics and declarations. ",
+    link: "/modules/#reports",
   },
   {
     title: "Documents",
     icon: "/icons/documents.svg",
     description:
       "Documents — Centralized file hub.",
+    link: "/modules/#documents",
   },
 ];
 
 const MotionCard = motion.create(Card);
 
 const HowItWork: FC = () => {
+  const router = useRouter();
+
   return (
     <section
       id="how-it-works"
@@ -107,6 +121,13 @@ const HowItWork: FC = () => {
           WineOpSys turns the winery production flow into modular, connected
           blocks that can be activated step by step.
         </motion.p>
+        <Button
+          size="lg"
+          className="rounded-full bg-[#66243E] px-[22px] text-[20px] leading-[24px] font-medium text-white hover:bg-[#66243E] cursor-pointer"
+          onClick={() => router.push("/modules")}
+        >
+          Modules Overview
+        </Button>
          <HowItWorkShapeRight />
       </div>
 
@@ -159,6 +180,7 @@ const HowItWork: FC = () => {
               </div>
 
               <div
+                onClick={() => router.push(group.link!)}
                 className="
                   self-end rounded-full cursor-pointer
                   border border-[#C27A8F]

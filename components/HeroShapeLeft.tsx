@@ -12,7 +12,7 @@ const HeroShapeLeft: React.FC = () => {
           top-[10px] ml-[-371px] 
           md:top-[14px] md:ml-[-371px]  
           lg:top-[-14px] lg:ml-[-300px] lg:max-w-[857px] 
-          xl:top-[-152px] xl:ml-[-700px] xl:w-[857px]"
+          xl:top-[-152px] xl:ml-[-600px] xl:w-[762px]"
 
         initial={{ y: -10, rotate: -2 }}
         animate={{ y: [ -20, 10, -20 ], rotate: [ -3, 3, -3 ] }}

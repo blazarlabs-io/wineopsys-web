@@ -10,7 +10,7 @@ const HeroModulesShapeBottom: React.FC = () => {
         className="
           absolute w-full max-w-[418px] 
           top-[435px] ml-[255px]
-          sm:top-[435px] sm:ml-[55px]
+          sm:top-[235px] sm:ml-[55px]
           lg:ml-[290px] lg:max-w-[418px]
           xl:top-[300px]"
 

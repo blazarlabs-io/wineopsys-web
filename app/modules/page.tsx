@@ -10,11 +10,10 @@ import Footer from '@/sections/Footer';
 export default function Home() {
   return (
     <>
-      <div className='bg-white text-[#66243E] overflow-x-hidden'>
+      <div className='bg-white text-[#66243E] overflow-x-clip '>
         <NavigationBar />
         <HeroModules />
         <SecondNavBar />
-        {/* <div className='h-[700px]'></div> */}
         <div className="space-y-20">
           {SECTIONS.map((section, i) => (
             <CardsSection key={i} {...section} />
@@ -22,7 +21,7 @@ export default function Home() {
         </div>
       </div>
       <div className='w-full bg-[#66243E]'>
-        <Footer />
+        <Footer marginTop='mt-0'/>
       </div>
     </>
   );

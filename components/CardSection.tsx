@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import {motion} from "framer-motion";
 
 type ImageSpec = {
   src: string;
@@ -23,14 +22,14 @@ type ShapeSpec = {
 };
 
 export type UniversalSectionProps = {
-  imageLeft: ImageSpec;
-  imageRight: ImageSpec;
+  id: string;
   cards: CardSpec[];
   shapes?: ShapeSpec[];
   className?: string;
   heading?: React.ReactNode;
   headingIcon?: React.ReactNode;
-  heroimage?: string;
+  leftHeroimage?: string;
+  rightHeroimage?: string;
 };
 
 function cn(...parts: Array<string | undefined | false | null>) {
@@ -43,25 +42,25 @@ function cn(...parts: Array<string | undefined | false | null>) {
  * - A responsive grid of content cards
  */
 export default function CardsSection({
-  imageLeft,
-  imageRight,
+  id,
   cards,
   shapes = [],
   className,
   headingIcon,
   heading,
-  heroimage
+  leftHeroimage,
+  rightHeroimage
 }: UniversalSectionProps) {
   return (
-    <section className={cn("w-full", className)}>
-      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+    <section id={id} className={cn("w-full", className)}>
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 relative">
 
         {/* HEADER */}
         <div className="mt-[45px] flex w-full">
           <div className="flex h-[49px] sm:h-[90px] w-[49px] sm:w-[90px] items-center justify-center rounded-2xl bg-[#C27A8F] shrink-0">
             <Image
-              src={headingIcon as string}
-              alt={heading as string}
+              src={headingIcon as string || "/icons/vineyards.svg"}
+              alt={heading as string || "section-icon"}
               width={32}
               height={32}
               className="
@@ -86,7 +85,7 @@ export default function CardsSection({
               lg:w-[580px] z-20 translate-x-[100px]
               ">
               <Image
-                src="/laptop.png"
+                src={leftHeroimage || "/laptop.png"}
                 alt="object-laptop-shape"
                 width={900}
                 height={1200}
@@ -103,8 +102,8 @@ export default function CardsSection({
                  w-[446px] z-10"
             >
               <Image
-                src={heroimage || "/modules/vineyard-management.png"}
-                alt="object-glass"
+                src={rightHeroimage || "/modules/vineyard-management.png"}
+                alt="object-image"
                 width={900}
                 height={1200}
                 className="w-full h-auto rounded-[60px]"  
@@ -127,45 +126,20 @@ export default function CardsSection({
           
         </div>
 
-        {/* SHAPES */}
-        <div className="relative">
+        {/* SECTION SHAPES */}
+        <div className="absolute">
           {/* Decorative shapes (absolute) */}
           {shapes.map((s, idx) => (
-            <img
+            <Image
+              src={s.src || "/shapes/object-gray-romb.svg"}
+              alt="object-bottom-gray"
               key={idx}
-              src={s.src}
-              alt={s.alt ?? ""}
-              aria-hidden={s.alt ? undefined : true}
-              className={cn(
-                "pointer-events-none absolute select-none",
-                s.classnames
-              )}
-              draggable={false}
+              width={542}
+              height={542}
+              className={cn("relative", s.classnames)}  
+              priority
             />
           ))}
-
-          <div className="relative mx-auto flex w-full max-w-5xl items-center justify-center gap-6">
-            <img
-              src={imageLeft.src}
-              alt={imageLeft.alt ?? ""}
-              className={cn(
-                "h-auto w-[52%] max-w-[560px] rounded-2xl shadow-sm",
-                "sm:w-[54%]",
-                imageLeft.classnames
-              )}
-              loading="lazy"
-            />
-
-            <img
-              src={imageRight.src}
-              alt={imageRight.alt ?? ""}
-              className={cn(
-                "hidden h-auto w-[44%] max-w-[460px] rounded-2xl shadow-sm sm:block",
-                imageRight.classnames
-              )}
-              loading="lazy"
-            />
-          </div>
         </div>
 
         {/* CARDS */}
@@ -175,7 +149,7 @@ export default function CardsSection({
               key={idx}
               className={cn(
                 "relative rounded-2xl border bg-background px-7 py-[42px] shadow-sm",
-                "overflow-hidden",
+                "overflow-x-hidden",
                 "sm:last:odd:col-span-2 sm:last:odd:justify-self-center sm:last:odd:w-[calc(50%-0.75rem)]",
                 card.classnames
               )}

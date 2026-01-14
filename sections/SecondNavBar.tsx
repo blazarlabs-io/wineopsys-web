@@ -10,6 +10,7 @@ function scrollToSection(id: string) {
   if (el) {
     const y = el.getBoundingClientRect().top + window.scrollY - 80;
     window.scrollTo({ top: y, behavior: "smooth" });
+    el.scrollIntoView({ behavior: "smooth" });
   }
 }
 
@@ -35,7 +36,7 @@ export default function SecondNavBar() {
   };
 
   return (
-    <header className="sticky top-[80px] left-0 right-0 z-40 bg-[#F5EFEE]">
+    <header className="sticky top-[64px] left-0 right-0 z-40 bg-[#F5EFEE]">
       <div className="mx-auto max-w-[1028px] flex items-center justify-between px-6 lg:px-0 py-[29px]">
         
 

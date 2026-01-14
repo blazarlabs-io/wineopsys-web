@@ -33,11 +33,11 @@ export default function NavigationBar() {
     <header className="fixed top-0 left-0 right-0 z-40 border-b border-slate-200 bg-white">
       <div className="mx-auto max-w-[1028px] flex items-center justify-between px-6 lg:px-0 py-4">
         <div
-          className="flex cursor-pointer items-center gap-2"
-          onClick={() => handleNavClick("home")}
+          className="flex cursor-pointer items-center gap-2" onClick={() => handleNavClick("home")}
         >
           <div className="flex flex-col xl:ml-[-180px]">
-            <Image src="/Logo-navbar.svg" alt="WineOpSys" width={168} height={27} />
+            <a href="/">
+            <Image src="/Logo-navbar.svg" alt="WineOpSys" width={168} height={27} /> </a>
           </div>
         </div>
 
