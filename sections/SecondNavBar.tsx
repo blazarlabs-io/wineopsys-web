@@ -10,18 +10,24 @@ function scrollToSection(id: string) {
   if (el) {
     const y = el.getBoundingClientRect().top + window.scrollY - 80;
     window.scrollTo({ top: y, behavior: "smooth" });
+    el.scrollIntoView({ behavior: "smooth" });
   }
 }
 
 const navItems = [
-  { id: "home", label: "Home" },
-  { id: "features", label: "Features" },
-  { id: "how-it-works", label: "How It Works" },
-  { id: "who-uses", label: "Who Uses WineOpSys" },
-  { id: "team", label: "Team / Contact" },
+  { id: "vineyards", label: "Vineyards" },
+  { id: "grapes", label: "Grapes" },
+  { id: "wine-production", label: "Wine Production" },
+  { id: "order-management", label: "Order Management" },
+  { id: "vessel-management", label: "Vessel Management" },
+  { id: "consumables", label: "Consumables" },
+  { id: "storage", label: "Storage" },
+  { id: "team-tasks", label: "Team & Tasks" },
+  { id: "reports", label: "Reports" },
+  { id: "documents", label: "Documents" },
 ];
 
-export default function NavigationBar() {
+export default function SecondNavBar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   const handleNavClick = (id: string) => {
@@ -30,16 +36,9 @@ export default function NavigationBar() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 border-b border-slate-200 bg-white">
-      <div className="mx-auto max-w-[1028px] flex items-center justify-between px-6 lg:px-0 py-4">
-        <div
-          className="flex cursor-pointer items-center gap-2" onClick={() => handleNavClick("home")}
-        >
-          <div className="flex flex-col xl:ml-[-180px]">
-            <a href="/">
-            <Image src="/Logo-navbar.svg" alt="WineOpSys" width={168} height={27} /> </a>
-          </div>
-        </div>
+    <header className="sticky top-[64px] left-0 right-0 z-40 bg-[#F5EFEE]">
+      <div className="mx-auto max-w-[1028px] flex items-center justify-between px-6 lg:px-0 py-[29px]">
+        
 
         {/* Desktop nav (xl and up) */}
         <nav className="hidden items-center gap-5 xl:flex">
@@ -47,18 +46,11 @@ export default function NavigationBar() {
             <button
               key={item.id}
               onClick={() => handleNavClick(item.id)}
-              className="text-[17px] font-medium tracking-wide text-[#66244e] transition hover:text-[#66243e] cursor-pointer"
+              className="text-[14px] font-medium text-left tracking-wide text-[#66244e] transition hover:text-[#66243e] cursor-pointer"
             >
               {item.label}
             </button>
           ))}
-          <Button
-            size="sm"
-            className="rounded-full bg-[#66244e] px-4 text-[14px] ml-5 font-medium text-white hover:bg-[#66243e] cursor-pointer"
-            onClick={() => handleNavClick("contact")}
-          >
-            Request a demo
-          </Button>
         </nav>
 
         {/* Mobile burger (below xl) */}
@@ -102,13 +94,6 @@ export default function NavigationBar() {
                 {item.label}
               </button>
             ))}
-            <Button
-              size="sm"
-              className="mt-2 w-full rounded-full bg-[#66244e] text-[14px] font-medium text-white hover:bg-[#66243e] cursor-pointer"
-              onClick={() => handleNavClick("contact")}
-            >
-              Request a demo
-            </Button>
           </div>
         </nav>
       )}

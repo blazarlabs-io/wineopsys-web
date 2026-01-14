@@ -9,9 +9,17 @@ const menuItems = [
   { title: 'Team / Contact', href: '/#contact' },
 ];
 
-export default function Footer() {
+export type FooterProps = {
+  marginTop?: string;
+};
+
+function cn(...parts: Array<string | undefined | false | null>) {
+  return parts.filter(Boolean).join(" ");
+}
+
+export default function Footer( {marginTop = 'mt-[120px]'} : FooterProps) {
   return (
-    <footer className="w-full px-6 lg:px-0 lg:max-w-[1024px] mt-[120px] mx-auto bg-[#66243E] py-[80px]">
+    <footer className={cn("w-full px-6 lg:px-0 lg:max-w-[1024px] mx-auto bg-[#66243E] py-[80px]", marginTop )}>
       {/* logo + divider */}
       <div className="flex w-full items-end justify-center gap-[37px] lg:justify-start">
         <img
