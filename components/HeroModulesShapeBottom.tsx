@@ -9,9 +9,9 @@ const HeroModulesShapeBottom: React.FC = () => {
       <motion.div
         className="
           absolute w-full max-w-[418px] 
-          top-[435px] ml-[255px]
-          sm:top-[235px] sm:ml-[55px]
-          lg:ml-[290px] lg:max-w-[418px]
+          top-[255px] ml-[255px]
+          sm:top-[205px] sm:ml-[505px]
+          lg:ml-[290px] lg:max-w-[418px] lg:top-[300px]
           xl:top-[300px]"
 
         initial={{ y: 0 }}
