@@ -2,6 +2,9 @@
 
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { itemFromBottom } from "@/lib/motion/common";
+import { heroContainer } from "@/lib/motion/heroVariants";
 
 type ImageSpec = {
   src: string;
@@ -52,7 +55,13 @@ export default function CardsSection({
   rightHeroimage
 }: UniversalSectionProps) {
   return (
-    <section id={id} className={cn("w-full", className)}>
+    <motion.section 
+      id={id} className={cn("w-full", className)}
+      variants={heroContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.4 }}
+      >
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 relative">
 
         {/* HEADER */}
@@ -78,11 +87,11 @@ export default function CardsSection({
         </div>
 
         {/* HERO */}
-        <div className="flex items-center overflow-x-hidden mt-[54px]">
+        <div className="flex items-center flex-col md:flex-row lg:overflow-x-hidden mt-[54px]">
           {/* object-Laptop */}
             <div className="
-              relative w-full shrink-0
-              lg:w-[580px] z-20 translate-x-[100px]
+              relative w-full shrink-0 max-w-[445px] lg:max-w-none
+              lg:w-[580px] z-20 md:translate-x-[100px]
               ">
               <Image
                 src={leftHeroimage || "/laptop.png"}
@@ -95,7 +104,7 @@ export default function CardsSection({
           </div>
 
           {/* Images block */}
-          <div className="flex translate-x-[-100px]">
+          <div className="flex md:translate-x-[-100px]">
             {/* Image vineyard */}
             <div 
               className="
@@ -111,7 +120,7 @@ export default function CardsSection({
               />
             </div>
 
-            {/* SHAPE */}
+            {/* UNDER IMAGE SHAPE */}
             <div className="w-[445px] relative left-[-350px] z-0">
               <Image
                 src="shapes/object-color-romb.svg"
@@ -187,6 +196,6 @@ export default function CardsSection({
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

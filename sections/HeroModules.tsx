@@ -46,18 +46,19 @@ export default function HeroModules() {
               Core Operational Modules
             </motion.h1>
 
+            <div className="hidden lg:block">
+              {/* object-right Vinemaker */}
+              <HeroModulesImageVinemaker />
 
-            {/* object-right Vinemaker */}
-            <HeroModulesImageVinemaker />
+              {/* object-right Laptop */}
+              <HeroModulesImageLaptop />
 
-            {/* object-right Laptop */}
-            <HeroModulesImageLaptop />
+              {/* object-right Laptop */}
+              <HeroModulesImageVineyard />
 
-            {/* object-right Laptop */}
-            <HeroModulesImageVineyard />
-
-            {/* object-right Laptop */}
-            <HeroModulesImageCellar />
+              {/* object-right Laptop */}
+              <HeroModulesImageCellar />
+            </div>
 
             {/* object-bottom */}
             <HeroModulesShapeBottom />
