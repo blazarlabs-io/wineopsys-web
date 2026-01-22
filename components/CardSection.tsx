@@ -55,12 +55,9 @@ export default function CardsSection({
   rightHeroimage
 }: UniversalSectionProps) {
   return (
-    <motion.section 
+    <section 
       id={id} className={cn("w-full", className)}
-      variants={heroContainer}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.4 }}
+      
       >
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 relative">
 
@@ -196,6 +193,6 @@ export default function CardsSection({
           ))}
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
