@@ -50,13 +50,12 @@ export default function Footer( {marginTop = 'mt-[120px]'} : FooterProps) {
           <div className='mt-[25px] flex gap-[20px]'>
             <img src='/footer/telegram-social.svg' className='h-[50px]' />
             <img src='/footer/facebook-social.svg' className='h-[50px]' />
-            <img src='/footer/telegram-social.svg' className='h-[50px]' />
           </div>
         </div>
         <div>
           <div className='text-[#CBA2A6] text-[22px] leading-[20px]'>Our Partners:</div>
-          <div className='mt-[25px]'>
-            <img src='/footer/cardano.svg' className='h-[50px]' />
+          <div className='mt-[25px] cursor-pointer'>
+            <a target='blank' href="https://cardanofoundation.org/"><img src='/footer/cardano.svg' className='h-[50px]' /></a>
           </div>
         </div>
         <div className="flex flex-col items-center lg:items-start lg:justify-end">
