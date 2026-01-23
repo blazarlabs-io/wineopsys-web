@@ -62,7 +62,13 @@ export default function CardsSection({
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 relative">
 
         {/* HEADER */}
-        <div className="mt-[45px] flex w-full">
+        <motion.div 
+          className="mt-[45px] flex w-full"
+          variants={itemFromBottom}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <div className="flex h-[49px] sm:h-[90px] w-[49px] sm:w-[90px] items-center justify-center rounded-2xl bg-[#C27A8F] shrink-0">
             <Image
               src={headingIcon as string || "/icons/vineyards.svg"}
@@ -81,10 +87,16 @@ export default function CardsSection({
               {heading}
             </h2>
           </div>
-        </div>
+        </motion.div>
 
         {/* HERO */}
-        <div className="flex items-center flex-col md:flex-row lg:overflow-x-hidden mt-[54px]">
+        <motion.div  
+          className="flex items-center flex-col md:flex-row lg:overflow-x-hidden mt-[54px]"
+          variants={itemFromBottom}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          >
           {/* object-Laptop */}
             <div className="
               relative w-full shrink-0 max-w-[445px] lg:max-w-none
@@ -130,7 +142,7 @@ export default function CardsSection({
             </div>
           </div>
           
-        </div>
+        </motion.div>
 
         {/* SECTION SHAPES */}
         <div className="absolute">
@@ -149,7 +161,13 @@ export default function CardsSection({
         </div>
 
         {/* CARDS */}
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+        <motion.div 
+          className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-2"
+          variants={itemFromBottom}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          >
           {cards.map((card, idx) => (
             <article
               key={idx}
@@ -191,7 +209,7 @@ export default function CardsSection({
               </ul>
             </article>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
